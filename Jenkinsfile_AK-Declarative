@@ -1,0 +1,51 @@
+pipeline {
+  agent any
+  tools {
+    maven "maven3.8.2"
+  }
+  stages {
+    stage('1clone') {
+      steps {
+        echo "Ready to automate build"
+        git branch: 'development', credentialsId: 'gitHubCredentials', url: 'https://github.com/JendareyConsulting/googlepay.git'
+        echo "Latest application version collected from SCM"
+        slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'CodeClone for google app completed successfully'
+      }
+    }
+    stage('2build') {
+      steps {
+        echo "Build process starts"
+        sh "mvn clean package"
+        echo "Build process ends"
+        slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'MavenBuild for google app completed successfully'
+      }
+    }
+    stage('3review') {
+      steps {
+        echo "CodeQuality review starts"
+        sh "mvn sonar:sonar"
+        echo "CodeQuality review ends"
+        slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'CodeQuality review for google app completed successfully'
+      }
+    }
+    stage('4UploadArtifacts') {
+      steps {
+        sh "mvn deploy"
+        echo "Build and release job completed successfully"
+        slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'UploadArtifacts on nexus for google app completed successfully'
+      }
+    }
+    stage('5deployment') {
+      steps {
+        deploy adapters: [tomcat9(credentialsId: 'landmark-pass', path: '', url: 'http://18.212.6.168:8080/')], contextPath: null, war: 'target/*.war'
+        echo "Deployment to production completed successfully"
+        slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'Deployment to tomcat for google app completed successfully'
+      }
+    }
+  }
+  post {
+    always {
+      slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'Google app Deployment completed successfully'
+    }
+  }
+}
