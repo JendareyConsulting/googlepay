@@ -9,11 +9,17 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Tesla Web application - North Dallas Project.</h1>
-<h1 align="center">We are developing and supporting quality Software Solutions for millions of clients globally.
-	           We are raising millionaires in IT automation.
-	We offer Training for DevOps with Linux and Cloud equipping IT Engineers for the best performance.
-	Class 33 will start on July 15, 2023. </h1>
+<h1 align="center">Welcome Jendarey Consulting, Inc.</h1>
+<h1 align="center">Working to improve you!
+
+Need a career change and a pay increase? We invite you to an online Anti-Money Laundering Career Training lanre.
+
+Learn More About  Upcoming Training Sessions 
+
+Do you want to upgrade to a more satisfying and flexible career? Earn $70,000.00 or more per year with little or no experience?  A career as an Anti-Money Laundering Analyst may be for you!  After you fill out this order request, we will contact you to go over details and availability before the registration is completed. 
+If you would like faster service and direct information on current pricing, please contact us via phone at 682-298-8089 or by email at trainings@jendareyconsulting.com. 
+
+Click to register:  AML Bootcamp Virtual Registration</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
