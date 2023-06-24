@@ -5,9 +5,9 @@
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.6</version> 
+	<version>0.0.7</version> 
 	
-	<name>maven-web-application</name>
+	<name>googlepay-application</name>
 
 	<description>Maven Web Project for Java Project</description>
 
