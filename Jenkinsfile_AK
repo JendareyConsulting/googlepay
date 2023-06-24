@@ -2,29 +2,36 @@ node {
   def mavenHome = tool name: 'maven3.8.2'
   stage('1.CodeClone') {
     git credentialsId: 'akinluyigithub', url: 'https://github.com/JendareyConsulting/googlepay.git'
+    slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'CodeClone completed successfully'
   }
   stage('2.MavenBuild') {
     sh "${mavenHome}/bin/mvn package"
+    slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'MavenBuild completed successfully'
   }
   stage('3.CodeQualityAnalysis') {
     sh "${mavenHome}/bin/mvn sonar:sonar"
+    slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'CodeQualityAnalysis completed successfully'
   }
   stage('4.Upload2Nexus') {
     sh "${mavenHome}/bin/mvn deploy"
+    slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'Upload2Nexus completed successfully'
   }
   stage('5.Deploy2UAT') {
     deploy adapters: [tomcat9(credentialsId: 'landmark-pass', path: '', url: 'http://18.212.6.168:8080/')], contextPath: null, war: 'target/*war'
+    slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'Deploy2UAT completed successfully'
   }
   stage('6.ManualApproval') {
     sh "echo 'Application ready for review'"
     timeout(time: 5, unit: 'HOURS') {
       input message: 'Application ready for deployment. Please review and approve'
+      slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'ManualApproval completed successfully'
     }
   }
   stage('7.Deploy2Prod') {
     deploy adapters: [tomcat9(credentialsId: 'landmark-pass', path: '', url: 'http://18.212.6.168:8080/')], contextPath: null, war: 'target/*war'
+    slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'Deploy2Prod completed successfully'
   }
   stage('8.Notification') {
-    slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'Deployment completed successfully'
+    slackSend channel: '#maven', teamDomain: 'JendareyConsulting', tokenCredentialId: 'slack-token2', message: 'Googleapp Deployment completed successfully'
   }
 }
