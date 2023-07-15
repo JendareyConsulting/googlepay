@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>LandmarkTechnologies- Home Page</title>
+<title>JendareyConsulting- Home Page</title>
 <link href="images/mylandmarklogo.png" rel="icon">
 </head>
 </head>
@@ -16,7 +16,7 @@ Need a career change and a pay increase? We invite you to an online Anti-Money L
 
 Learn More About  Upcoming Training Sessions 
 
-Do you want to upgrade to a more satisfying and flexible career? Earn $70,000.00 or more per year with little or no experience?  A career as an Anti-Money Laundering Analyst may be for you!  After you fill out this order request, we will contact you to go over details and availability before the registration is completed. 
+Do you want to upgrade to a more satisfying and flexible career? Earn $150,000.00 or more per year with little or no experience?  A career as an Anti-Money Laundering Analyst may be for you!  After you fill out this order request, we will contact you to go over details and availability before the registration is completed. 
 
 If you would like faster service and direct information on current pricing, please contact us via phone at 682-298-8089 or by email at trainings@jendareyconsulting.com. 
 
@@ -42,20 +42,20 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		<img src="images/mylandmarklogo.png" alt="" width="150">
 	</span>
 	<span style="font-weight: bold;">
-                Landmark Technology, 
-		Toronto, Canada
-		+1 437 215 2483,
-		mylandmarktech@gmail.com
+                Jendarey Consulting, 
+		Dallas, Texas, United States
+		+1 682 298 8089,
+		ak@jendareyconsulting.com
 		<br>
-		<a href="mailto:mylandmarktech@gmail.com">Mail to Landmark Technologies</a>
+		<a href="mailto:ak@jendareyconsulting.com">Mail to Jendarey Consulting</a>
 	</span>
 </div>
 <hr>
 	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
 <hr>
 <hr>
-<p align=center> Landmark Technologies - Consultant, Training and Software Development</p>
-<p align=center><small>Copyrights 2021 by <a href="http://mylandmarktech.com/">Landmark Technologies</a> </small></p>
+<p align=center> Jendarey Consulting - Consultant, AML Training and Software Development</p>
+<p align=center><small>Copyrights 2023 by <a href="http://jendareyconsulting/">Jendarey Consulting</a> </small></p>
 
 </body>
 </html>
