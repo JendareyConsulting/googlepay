@@ -1,0 +1,5 @@
+FROM jboss/wildfly
+#### Good stuff
+## jesus is Lord
+# thanks team you are the best. now it is okay nw
+COPY target/*.war /opt/jboss/wildfly/standalone/deployments/web.war
